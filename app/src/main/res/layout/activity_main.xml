@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#ff040404">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rigolLogo"
+        android:src="@drawable/rigol_logo"
+        android:paddingBottom="4dp"
+        android:contentDescription="@string/logo"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rigolLogo"
+        android:id="@+id/leftButtons"
+        android:layout_above="@+id/infoBar"
+        android:layout_marginEnd="24dp">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ch1_short"
+            android:id="@+id/ch1Btn"
+            android:background="@drawable/button"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/channel1High" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ch2_short"
+            android:id="@+id/ch2Btn"
+            android:background="@drawable/button"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/channel2Med" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ch3_short"
+            android:id="@+id/ch3Btn"
+            android:background="@drawable/button"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/channel3Med" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ch4_short"
+            android:id="@+id/ch4Btn"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/button"
+            android:textColor="@color/channel4Med" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_stop"
+            android:id="@+id/startStop"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/button"
+            android:onClick="onStartStopButton"
+            android:textColor="@color/rigolText" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/infoBar"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="V"
+            android:textColor="@color/rigolText"
+            android:id="@+id/verticalScale" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/waveformFrame"
+        android:layout_below="@+id/rigolLogo"
+        android:layout_above="@+id/infoBar"
+        android:layout_toEndOf="@+id/leftButtons"
+        android:layout_marginStart="12dp"
+        >
+    <com.geospark.scoperoid.WaveformView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:id="@+id/waveformView"
+        />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/timebase"
+        android:text="H"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/rigolText"
+        android:layout_alignStart="@id/waveformFrame" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/timeoffset"
+        android:text="D"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/rigolText"
+        android:layout_alignEnd="@id/waveformFrame" />
+
+</RelativeLayout>

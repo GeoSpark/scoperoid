@@ -1,0 +1,7 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">#f8fcf8</item>
+        <item name="aspectRatioWidth">1200</item>
+        <item name="aspectRatioHeight">800</item>
+    </style>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="channel1High">#f8fc00</color>
+    <color name="channel2High">#00fcf8</color>
+    <color name="channel3High">#f800f8</color>
+    <color name="channel4High">#0080f8</color>
+
+    <color name="channel1Med">#383810</color>
+    <color name="channel2Med">#103838</color>
+    <color name="channel3Med">#381438</color>
+    <color name="channel4Med">#102838</color>
+
+    <color name="channel1Low">#202400</color>
+    <color name="channel2Low">#002420</color>
+    <color name="channel3Low">#200020</color>
+    <color name="channel4Low">#001020</color>
+
+    <color name="rigolText">#f8fcf8</color>
+    <color name="trigger">#f88000</color>
+</resources>
