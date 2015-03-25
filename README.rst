@@ -17,6 +17,10 @@ Caveats
 * It seems there is no way to determine the RUN/STOP mode the 'scope is currently in, so the
   RUN/STOP button on the phone provides no feedback, merely sends the command to the 'scope and
   assumes the 'scope is in RUN mode when the app is started.
+* Thanks to the eagle-eyed PeDre on the EEVBlog forum, it *is* possible to get
+  the RUN/STOP status by calling `:TRIGger:STATus?` So expect this in an
+  upcoming commit.
+
 
 TODO
 ----
