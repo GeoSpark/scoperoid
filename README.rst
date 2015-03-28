@@ -6,7 +6,7 @@ Caveats
 -------
 * I AM NOT RESPONSIBLE IF THIS BREAKS YOUR ANDROID DEVICE OR YOUR TEST EQUIPMENT, SENDS IT OUT OF
   CALIBRATION, VOIDS THE WARRANTY, OR RELEASES THE MAGIC BLUE SMOKE. IT IS BEING PROVIDED AS-IS.
-* This has only been tested on a Rigol DS1054Z and an Android Nexus 6 running Lollipop 5.0.1
+* This has only been tested on a Rigol DS1054Z and an Android Nexus 6 running Lollipop 5.0.1 and 5.1
 * It requires a "USB-on-the-go" adapter to enable the Android device to act as host, and this
   should ultimately plug in to the USB port on the *back* of the 'scope.
 * Currently it only detects the 'scope when it is plugged in *after* the app has been launched.
@@ -21,6 +21,12 @@ Caveats
   the RUN/STOP status by calling `:TRIGger:STATus?` So expect this in an
   upcoming commit.
 
+Notes and stuff
+---------------
+I have tinkered with the Ethernet interface to my scope and come up with this Python script to test it:
+https://gist.github.com/MerseyViking/c67b7d6ebdda55929fbd
+
+Seems fairly straightforward, so implementing it on Android should be a breeze.
 
 TODO
 ----
@@ -30,17 +36,14 @@ TODO
 * Add support for other 'scopes that use the USBTMC standard. Anyone with a bunch of 'scopes and
   a desire to write some Android code?
 * Test on a wider variety of phones.
-* See if reasonable throughput can be achieved via a UDB Bluetooth dongle.
-* Experiment with the Ethernet interface. Does anyone have any information on this that isn't just
-  "use the NI VISA driver"? My initial thoughts are just to throw data at it via a simple script
-  and see what I get.
+* See if reasonable throughput can be achieved via a USB Bluetooth dongle.
 
 What I may do
 -------------
 It might be quite fun to record waveform data on the Android device, but as we can't gurantee we
 get every part of the waveform due to USB bandwith and CPU speed, and there appears to be no way of
 getting an absolute timestamp, this might only be useful as a series of frames rather than a
-comntinuous signal. Maybe in rolling mode we could get something suitable for playback, but the
+continuous signal. Maybe in rolling mode we could get something suitable for playback, but the
 timebase for that has to be quite large so there will be signal bandwidth limits.
 We could trigger the 'scope's record/playback mode and maybe suck out the data via that interface,
 but I've not looked at that.
